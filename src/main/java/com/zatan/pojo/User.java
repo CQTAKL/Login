@@ -29,7 +29,7 @@ public class User {
     private int gender;//1男，0女
     private Date birth;
     private String school;
-    private String motto;
+    private String motto;//个性签名
     private String accountNum;//账号(随机唯一字符串)
 
     public User() {

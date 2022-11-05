@@ -13,7 +13,7 @@ public class User {
     private String nickName;
     private String password;
     private String salt;
-    private String phoneName;
+    private String phoneNum;
     private String email;
     private String userIp;
     private String identifyCode;
@@ -35,13 +35,13 @@ public class User {
     public User() {
     }
 
-    public User(int id, String realName, String nickName, String password, String salt, String phoneName, String email, String userIp, String identifyCode, StatusEnum status, String qq, boolean vip, int totalLikeNum, boolean isFollowed, List<User> attentionUser, Date creatTime, String headerUrl, String major, int gender, Date birth, String school, String motto, String accountNum) {
+    public User(int id, String realName, String nickName, String password, String salt, String phoneNum, String email, String userIp, String identifyCode, StatusEnum status, String qq, boolean vip, int totalLikeNum, boolean isFollowed, List<User> attentionUser, Date creatTime, String headerUrl, String major, int gender, Date birth, String school, String motto, String accountNum) {
         this.id = id;
         this.realName = realName;
         this.nickName = nickName;
         this.password = password;
         this.salt = salt;
-        this.phoneName = phoneName;
+        this.phoneNum = phoneNum;
         this.email = email;
         this.userIp = userIp;
         this.identifyCode = identifyCode;
@@ -102,11 +102,11 @@ public class User {
     }
 
     public String getPhoneName() {
-        return phoneName;
+        return phoneNum;
     }
 
     public void setPhoneName(String phoneName) {
-        this.phoneName = phoneName;
+        this.phoneNum = phoneName;
     }
 
     public String getEmail() {
@@ -253,7 +253,7 @@ public class User {
                 ", nickName='" + nickName + '\'' +
                 ", password='" + password + '\'' +
                 ", salt='" + salt + '\'' +
-                ", phoneName='" + phoneName + '\'' +
+                ", phoneName='" + phoneNum + '\'' +
                 ", email='" + email + '\'' +
                 ", userIp='" + userIp + '\'' +
                 ", identifyCode='" + identifyCode + '\'' +

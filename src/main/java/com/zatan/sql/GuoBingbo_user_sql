@@ -1,0 +1,48 @@
+CREATE TABLE `t_login` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `nick_name` varchar(50) DEFAULT NULL COMMENT '用户名',
+  `password` varchar(50) DEFAULT NULL COMMENT '密码',
+  `salt` varchar(200) DEFAULT NULL COMMENT '盐',
+  `phone_num` varchar(50) DEFAULT NULL COMMENT '电话号码',
+  `email` varchar(200) DEFAULT NULL COMMENT '电子邮箱',
+  `qq` varchar(30) DEFAULT NULL COMMENT 'qq',
+  `account_num` varchar(30) DEFAULT NULL COMMENT '账号',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `phone_num` (`phone_num`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `qq` (`qq`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='登录信息'
+
+CREATE TABLE `t_user` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `real_name` varchar(50) DEFAULT NULL COMMENT '真实姓名',
+  `phone_num` varchar(50) DEFAULT NULL COMMENT '电话号码',
+  `email` varchar(200) DEFAULT NULL COMMENT '电子邮箱',
+  `identify_code` varchar(30) DEFAULT NULL COMMENT '身份证号',
+  `qq` varchar(30) DEFAULT NULL COMMENT 'qq',
+  `major` varchar(20) DEFAULT NULL COMMENT '专业',
+  `gender` int DEFAULT NULL COMMENT '性别',
+  `birth` date DEFAULT NULL COMMENT '生日',
+  `school` varchar(20) DEFAULT NULL COMMENT '学校',
+  `account_num` varchar(30) DEFAULT NULL COMMENT '账号',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `phone_num` (`phone_num`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `identify_code` (`identify_code`),
+  UNIQUE KEY `qq` (`qq`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户信息
+
+CREATE TABLE `t_account` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `account_num` varchar(30) DEFAULT NULL COMMENT '账号',
+  `user_ip` varchar(50) DEFAULT NULL COMMENT '用户ip',
+  `status` varchar(30) DEFAULT NULL COMMENT '状态 ZHENGCHANG,WEISHENGXIAO,SHIXIAO',
+  `vip` tinyint(1) DEFAULT NULL COMMENT '是不是vip',
+  `total_like_num` int DEFAULT NULL COMMENT '总赞数',
+  `is_followed` tinyint(1) DEFAULT NULL COMMENT '是否被关注',
+  `attention_user` varchar(100) DEFAULT NULL COMMENT '关注的人的账号',
+  `creat_time` date DEFAULT NULL COMMENT '账号创建时间',
+  `header_url` varchar(100) DEFAULT NULL COMMENT '头像地址',
+  `motto` varchar(100) DEFAULT NULL COMMENT '个性签名',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='账号信息'

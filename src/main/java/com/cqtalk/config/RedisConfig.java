@@ -1,4 +1,4 @@
-package com.zatan.config;
+package com.cqtalk.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.zatan.util;
+package com.cqtalk.util;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

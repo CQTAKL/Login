@@ -1,21 +1,26 @@
-package com.zatan.pojo;
+package com.cqtalk.entity;
 
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 
-
+@ApiModel("登录凭证类")
 public class LoginTicket {
 
-    private int account; //用户账号
+    @ApiModelProperty("用户账号")
+    private String account; //用户账号
+    @ApiModelProperty("凭证")
     private String ticket;
-    private int status;
+    @ApiModelProperty("过期时间")
     private Date expired;
 
-    public int getAccount() {
+    public String getAccount() {
         return account;
     }
 
-    public void setAccount(int account) {
+    public void setAccount(String account) {
         this.account = account;
     }
 
@@ -25,14 +30,6 @@ public class LoginTicket {
 
     public void setTicket(String ticket) {
         this.ticket = ticket;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
     }
 
     public Date getExpired() {
@@ -48,7 +45,6 @@ public class LoginTicket {
         return "LoginTicket{" +
                 "account=" + account +
                 ", ticket='" + ticket + '\'' +
-                ", status=" + status +
                 ", expired=" + expired +
                 '}';
     }

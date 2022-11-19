@@ -1,4 +1,4 @@
-package com.zatan.util;
+package com.cqtalk.util;
 
 public class RedisKeyUtil {
 
@@ -12,7 +12,7 @@ public class RedisKeyUtil {
     }
 
     // 用户
-    public static String getUserKey(int userId) {
-        return PREFIX_USER + SPLIT + userId;
+    public static String getUserKey(String accountNum) {
+        return PREFIX_USER + SPLIT + accountNum;
     }
 }

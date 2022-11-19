@@ -1,13 +1,13 @@
-package com.zatan;
+package com.cqtalk;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ZatanApplication {
+public class CqTalkApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ZatanApplication.class, args);
+        SpringApplication.run(CqTalkApplication.class, args);
     }
 
 }

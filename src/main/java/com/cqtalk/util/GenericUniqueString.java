@@ -1,4 +1,4 @@
-package com.zatan.util;
+package com.cqtalk.util;
 
 import java.util.UUID;
 

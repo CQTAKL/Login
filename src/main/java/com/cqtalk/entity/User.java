@@ -1,41 +1,67 @@
-package com.zatan.pojo;
+package com.cqtalk.entity;
 
 
-import com.zatan.util.GenericUniqueString;
+import com.cqtalk.util.GenericUniqueString;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 import java.util.List;
 
+@ApiModel("用户实体类")
 public class User {
 
+    @ApiModelProperty("id")
     private int id;
+    @ApiModelProperty("真实姓名")
     private String realName;
+    @ApiModelProperty("用户名")
     private String nickName;
+    @ApiModelProperty("密码")
     private String password;
+    @ApiModelProperty("盐")
     private String salt;
+    @ApiModelProperty("电话号码")
     private String phoneNum;
+    @ApiModelProperty("邮箱")
     private String email;
+    @ApiModelProperty("用户ip地址")
     private String userIp;
+    @ApiModelProperty("身份证号")
     private String identifyCode;
+    @ApiModelProperty("状态")
     private StatusEnum status;
+    @ApiModelProperty("qq号")
     private String qq;
+    @ApiModelProperty("是不是vip")
     private boolean vip;
+    @ApiModelProperty("总共有的赞数")
     private int totalLikeNum;
-    private boolean isFollowed;//是否被关注
+    @ApiModelProperty("是否被关注")
+    private boolean followed;//是否被关注
+    @ApiModelProperty("关注的人")
     private List<User> attentionUser;//关注的人
+    @ApiModelProperty("用户账号创建时间")
     private Date creatTime;
+    @ApiModelProperty("用户头像url")
     private String headerUrl;
+    @ApiModelProperty("用户专业")
     private String major;
+    @ApiModelProperty("性别")
     private int gender;//1男，0女
+    @ApiModelProperty("用户生日")
     private Date birth;
+    @ApiModelProperty("用户所在学校")
     private String school;
+    @ApiModelProperty("个性签名")
     private String motto;//个性签名
+    @ApiModelProperty("账号")
     private String accountNum;//账号(随机唯一字符串)
 
     public User() {
     }
 
-    public User(int id, String realName, String nickName, String password, String salt, String phoneNum, String email, String userIp, String identifyCode, StatusEnum status, String qq, boolean vip, int totalLikeNum, boolean isFollowed, List<User> attentionUser, Date creatTime, String headerUrl, String major, int gender, Date birth, String school, String motto, String accountNum) {
+    public User(int id, String realName, String nickName, String password, String salt, String phoneNum, String email, String userIp, String identifyCode, StatusEnum status, String qq, boolean vip, int totalLikeNum, boolean followed, List<User> attentionUser, Date creatTime, String headerUrl, String major, int gender, Date birth, String school, String motto, String accountNum) {
         this.id = id;
         this.realName = realName;
         this.nickName = nickName;
@@ -49,7 +75,7 @@ public class User {
         this.qq = qq;
         this.vip = vip;
         this.totalLikeNum = totalLikeNum;
-        this.isFollowed = isFollowed;
+        this.followed = followed;
         this.attentionUser = attentionUser;
         this.creatTime = creatTime;
         this.headerUrl = headerUrl;
@@ -166,11 +192,11 @@ public class User {
     }
 
     public boolean isFollowed() {
-        return isFollowed;
+        return followed;
     }
 
     public void setFollowed(boolean followed) {
-        isFollowed = followed;
+        followed = followed;
     }
 
     public List<User> getAttentionUser() {
@@ -261,7 +287,7 @@ public class User {
                 ", qq='" + qq + '\'' +
                 ", vip=" + vip +
                 ", totalLikeNum=" + totalLikeNum +
-                ", isFollowed=" + isFollowed +
+                ", isFollowed=" + followed +
                 ", attentionUser=" + attentionUser +
                 ", creatTime=" + creatTime +
                 ", headerUrl='" + headerUrl + '\'' +
